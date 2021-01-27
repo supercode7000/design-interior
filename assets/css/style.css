@@ -9,6 +9,18 @@ font-family: 'Lora', serif;
 font-family: 'Work Sans', sans-serif; 
 */
 
+body{
+    background: #2e2e2e;
+    /* ?  WOHER KOMMT VERTICAL SCRALL AB ca.600px BREITE? btw in gadgets-mode*/
+    overflow-x: hidden;
+
+}
+
+main{
+    /* ?  Hiermit ist VERTICAL SCROLL PROBLEM gelöst, was ist aber der Grund? */
+    /* ?   menu ist dann aber nicht STICKY - so erstma ausgeblendet  */
+    /* overflow-x: hidden; */
+}
 
 main, body, section, article, div, h1, h5, h3{
     margin: 0;
@@ -38,12 +50,13 @@ p{
 
 #titel-page{
     height: 100vh;
+    background: white;
 
     /* ?  WARUM BEKOMME ICH BEI 100vw oder 100% vertical scroll? */
     width: 99vw;
     display: grid;
 
-    /* ?  WOHER KOMMT DER "GAP" DAZWISCHEN? */
+    /* ?  WOHER KOMMT DER "GAP" DAZWISCHEN? GELÖST DURCH ÄNDERUNG d. BODY BACKGROUND */
     grid-template-columns: 40% 60%;
     grid-template-rows: 100%;
     /* place-items: fit; */
@@ -87,9 +100,15 @@ p{
 /* *        NAVi              */
 /* **************************** */
 
+
+/* *   invisible burger menu */
+#tripple{
+    display: none;
+}
+
 nav{
     position: sticky;
-    width: 100%;
+    width: 100vw;
     top: 0;
     color: white;
     display: inline-block;
@@ -165,7 +184,7 @@ ul li:not(:first-child):hover{
 
 /* ?  WOHER DER "GAP"  nach der MENU? */
 #main-page{
-    height: 100vh;
+    height: 105vh;
 
     background: #2e2e2e;
     /* ?  WARUM BEKOMME ICH BEI 100vw oder 100% vertical scroll? */
@@ -177,6 +196,7 @@ ul li:not(:first-child):hover{
     grid-template-rows: 100%;
     justify-items: start;
     align-items: center;
+
     /* gap: 0; */
 
     /* border: 1px green solid; */
@@ -232,6 +252,9 @@ ul li:not(:first-child):hover{
     align-content: center;
     justify-items: center;
     align-items: center;
+
+    background: white;
+    padding-bottom: 200px;
     
 }
 
@@ -250,7 +273,7 @@ ul li:not(:first-child):hover{
 }
 
 #featur p{
-    color: #1d2c2f;
+    opacity: .8;
     line-height: 150%;
 
 }
@@ -286,8 +309,8 @@ ul li:not(:first-child):hover{
 /* **************************** */
 
 #forms_wrapper{
-    margin-top: 20vh;
-    height: 70vh;
+    /* margin-top: 20vh; */
+    height: 60vh;
     background: #2e2e2e;
     display: flex;
     justify-content: space-around;
@@ -341,9 +364,15 @@ footer h3{
 
 footer section:last-of-type h3{
     word-spacing: 15px;
-    height: ;
+    /* height: ; */
 }
 
+
+
+
+/* **************************** */
+/* *        MEDIA QUERIES              */
+/* **************************** */
 
 
 @media only screen and (max-width:700px){
@@ -354,4 +383,210 @@ footer section:last-of-type h3{
     .pic-side img{
         height: 60vh;
     }
+
+    /* *NAV */
+
+    nav ul li:nth-of-type(1){
+        left: 5%;
+    }
+    
+    nav ul li:nth-of-type(2){
+        left: 30%;
+    }
+    
+    nav ul li:nth-of-type(3){
+        left: 40%;
+    
+    }
+    
+    nav ul li:nth-of-type(4){
+        left: 58%;
+    
+    }
+    nav ul li:nth-of-type(5){
+        left: 73%;
+    
+    }
+
+/* **  FEATURED PAGE */
+    #featur{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 35vh 40vh 50vh;
+        /* padding-left: 100px; */
+    }
+
+    #num1{
+        grid-column: 1/2;
+        grid-row: 1/2;
+    
+        /* ???????  does it work */
+        width: 40vw;
+    }
+    #num2{
+        grid-column: 2/-1;
+        grid-row: 1/2;
+    }
+
+    #num5{
+        grid-column: 1/-1;
+        grid-row: 3/-1;
+        
+    }
+    #featur img{
+        width: 40vw;
+    }
+}
+
+
+@media only screen and (max-width:500px){
+
+
+    iframe{
+        width: 355px;
+        height: 200px;
+        padding-top: 50px;
+    }
+
+    ul li:not(:first-of-type){
+        display: none;
+    }
+
+    /* ********************** */
+    /* *        BURGER MENU */
+    /* ********************** */
+
+
+
+
+
+    #tripple{
+        display: inline-block;
+        position: relative;
+        width: 300px;
+        height: 100px;
+        /* overflow-x: hidden; */
+    }
+    
+    /* *   POSITIONs */
+    #lines{
+        position: absolute;
+        right: 70px;
+        top: 10px;
+    
+    }
+    
+    #trigger_checkbox{
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    
+    
+    /* *    LOOKING AT */
+    #lines span{
+        display: block;
+        width: 40px;
+        height: 5px;
+        background: white;
+        border-radius: 2px;
+        margin-bottom: 1px;
+    }
+    
+    /* *   TRIGGER BUTTON + positioning */
+    input[type=checkbox]{
+        right: 70px;
+        top: 10px;
+        position: absolute;
+        transform: scale(3);
+        z-index: 13;
+        opacity: 0;
+    }
+    
+    
+    /* *    ASIDE MENU */
+    
+    #menu-aside{
+        position: absolute;
+        height: 100vh;
+        width: 300px;
+        /* opacity: .5; */
+        background: #2e2e2e;
+    
+        /* *  POSITIONING THE MENU - CONTAINS THE NUMBERS FROM trigger_checkbox */
+    
+        right: -720px;
+        top: -50px;
+    
+        /* *    ORDERING THE ELEMENTS */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 1;
+    }
+    
+    
+    /* *  TRIGGER */
+    
+    input[type=checkbox]:checked ~ #menu-aside{
+        right: 0px;
+        /* top: 40px; */
+        z-index: 2;
+        transition: 1s;
+    }
+    
+    input[type=checkbox]:checked ~ #closing_{
+        opacity: 1;
+        z-index: 2;
+    }
+    
+        /* *CLOSE ICON ON MENU AFTER ACTIVATION! */
+        #closing_{
+            position: absolute;
+            z-index: 5;
+            right: 70px;
+            top: -5px;
+            opacity: 0;
+        }
+
+        #main-page{
+            height: 100vh;
+        
+            background: #2e2e2e;
+            /* ?  WARUM BEKOMME ICH BEI 100vw oder 100% vertical scroll? */
+            width: 99vw;
+            display: grid;
+        
+            /* ?  WOHER KOMMT DER "GAP" DAZWISCHEN? */
+            grid-template-columns: 100%;
+            grid-template-rows: 50% 50%;
+            justify-items: center;
+            align-items: center; 
+
+        }
+
+        #main-page img{
+            width: 90vw;
+
+        }
+
+
+        #featur{
+            width: 100vw;
+            height: 180%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #featur img{
+            width: 70vw;
+        }
+
+        footer h3{
+            font-size: 0.6em;
+        }
+
+    
 }
