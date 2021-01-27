@@ -1,0 +1,348 @@
+/* **************************** */
+/* *        GENERAL              */
+/* **************************** */
+
+/* *   FONTS */
+
+/* 
+font-family: 'Lora', serif;
+font-family: 'Work Sans', sans-serif; 
+*/
+
+
+main, body, section, article, div, h1, h5, h3{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lora', serif;
+}
+
+img{
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+
+}
+
+p{
+    font-family: 'Work Sans', sans-serif; 
+}
+
+
+
+
+
+/* **************************** */
+/* *        TITEL PAGE              */
+/* **************************** */
+
+
+#titel-page{
+    height: 100vh;
+
+    /* ?  WARUM BEKOMME ICH BEI 100vw oder 100% vertical scroll? */
+    width: 99vw;
+    display: grid;
+
+    /* ?  WOHER KOMMT DER "GAP" DAZWISCHEN? */
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+    /* place-items: fit; */
+    /* gap: 0; */
+
+    /* border: 1px green solid; */
+}
+
+
+.text-side{
+    text-align: center;
+    place-self: center; 
+    width: 40vw;
+
+
+    /* border: 1px red solid; */
+
+}
+
+.text-side h1{
+    font-size: 3em;
+    padding-bottom: 20px;
+}
+
+.pic-side{
+    height: 100%;
+    justify-self: end;
+
+
+    /* border: 1px orange solid; */
+
+}
+.pic-side img{
+
+    height: 100vh;
+    width: 100%; 
+}
+
+
+/* **************************** */
+/* *        NAVi              */
+/* **************************** */
+
+nav{
+    position: sticky;
+    width: 100%;
+    top: 0;
+    color: white;
+    display: inline-block;
+    background-color: #2e2e2e;
+    z-index: 3;
+}
+
+nav img{
+    display: inline-block;
+    width: 100px;
+
+    /* padding-bottom: 60px; */
+    /* margin-bottom: 10px; */
+}
+
+nav ul{
+    height: 5vh;
+    list-style: none;
+    position: relative;
+
+}
+
+nav ul li:nth-of-type(1){
+    /* left: 20px;
+    top: 5px; */
+    top: -15px;
+}
+
+nav ul li:nth-of-type(2){
+    left: 30%;
+    top:10px
+}
+
+nav ul li:nth-of-type(3){
+    left: 50%;
+    top:10px
+
+}
+
+nav ul li:nth-of-type(4){
+    left: 70%;
+    top:10px
+
+}
+nav ul li:nth-of-type(5){
+    left: 90%;
+    top:10px
+
+}
+
+nav ul li{
+    display: inline-block;
+    position: absolute;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    position: relative;
+    left: 0;
+}
+
+ul li:not(:first-child):hover{
+    text-decoration: underline;
+}
+
+
+
+
+/* **************************** */
+/* *        SECOND PAGE              */
+/* **************************** */
+
+/* ?  WOHER DER "GAP"  nach der MENU? */
+#main-page{
+    height: 100vh;
+
+    background: #2e2e2e;
+    /* ?  WARUM BEKOMME ICH BEI 100vw oder 100% vertical scroll? */
+    width: 99vw;
+    display: grid;
+
+    /* ?  WOHER KOMMT DER "GAP" DAZWISCHEN? */
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
+    justify-items: start;
+    align-items: center;
+    /* gap: 0; */
+
+    /* border: 1px green solid; */
+}
+
+#main-page .text-side{
+    /* text-align: left; */
+    width: 80%;
+    color: white;
+
+    /* text-align: center;
+    place-self: center; 
+    width: 40vw; */
+
+
+    /* border: 1px red solid; */
+
+}
+
+#main-page img{
+    width: 60vw;
+}
+
+
+
+#main-page h2{
+    place-self: center;
+    /* font-family: 'Lora', serif;  */
+    font-family: 'Lora', serif;
+
+
+}
+
+#main-page p{
+    place-self: start;
+    text-align: left;
+    line-height: 160%;
+    font-family: 'Work Sans', sans-serif; 
+}
+
+/* **************************** */
+/* *        FEATURED PAGE              */
+/* **************************** */
+
+#featur{
+    padding-top: 100px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 35vh 40vh 50vh;
+    /* gap: 20px; */
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+#featur article{
+
+    /* !    DELETING FIXED WIDTHS   */
+    /* width: 30%;
+    height: 30%; */
+
+    /* border: red 1px solid; */
+}
+
+
+#featur img{
+    width: 28vw;
+}
+
+#featur p{
+    color: #1d2c2f;
+    line-height: 150%;
+
+}
+
+#num2 p, #num3 p , #num4 p{
+    text-align: center;
+    margin-top: 0;
+}
+
+/* ?  WHY ITS NOT BRIGHTER? - see abover - 8 lines */
+#num1{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+
+    /* ???????  does it work */
+    width: 40vw;
+}
+
+#num1 h2{
+
+    /* ?  DOUBLE CENTER neccessary in such cases? */
+    place-self: center; 
+    text-align: center;
+}
+
+#num5{
+    grid-column: 2/3;
+    
+}
+
+/* **************************** */
+/* *        Forms PAGE              */
+/* **************************** */
+
+#forms_wrapper{
+    margin-top: 20vh;
+    height: 70vh;
+    background: #2e2e2e;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#forms_wrapper p,#forms_wrapper h2, #forms_wrapper label {
+    color: white;
+}
+
+#forms_wrapper label{
+    padding: 10px 0 0;
+}
+
+#blok1, #blok2{
+    width: 30vw;
+}
+#form_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#button_{
+    width: 80px;
+    margin-top: 50px;
+}
+
+/* **************************** */
+/* *        FOOTER             */
+/* **************************** */
+
+
+footer{
+    background: #1d2c2f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 10vh;
+
+}
+
+footer h3{
+    color: white;
+    display: inline-block;
+
+}
+
+
+footer section:last-of-type h3{
+    word-spacing: 15px;
+    height: ;
+}
+
+
+
